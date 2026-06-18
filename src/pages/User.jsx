@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { allJob } from "../store/slice/jobSlice";
 import Cards from "../components/Cards";
@@ -10,6 +10,7 @@ const User = () => {
   const token = localStorage.getItem("job");
   const dispatch = useDispatch();
   const job = useSelector((store) => store.job) || [];
+  const navigate = useNavigate();
 
   console.log(job);
 

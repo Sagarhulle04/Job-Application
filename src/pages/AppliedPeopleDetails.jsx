@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { CardText, Modal } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 function AppliedPeopleDetails() {
   const token = localStorage.getItem("job");
+  const navigate = useNavigate();
 
   const { state } = useLocation();
   const dispatch = useDispatch();

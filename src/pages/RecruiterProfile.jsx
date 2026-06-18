@@ -7,6 +7,7 @@ import { seeJobApplied } from "../store/slice/jobApplicationSlice";
 import { useEffect } from "react";
 import Cards from "../components/Cards";
 import RecruiterPostedJobs from "../components/RecruiterPostedJobs";
+import { useNavigate } from "react-router-dom";
 
 function RecruiterProfile() {
   const token = localStorage.getItem("job");
@@ -14,6 +15,7 @@ function RecruiterProfile() {
   const user = useSelector((store) => store.user);
   const job = useSelector((store) => store.jobApplication);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   async function handleJobPostedByMe() {
     try {

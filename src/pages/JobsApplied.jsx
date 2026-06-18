@@ -3,10 +3,12 @@ import Card from "react-bootstrap/Card";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { addJobApplication } from "../store/slice/jobApplicationSlice";
+import { useNavigate } from "react-router-dom";
 
 function AppliedJobs() {
   const token = localStorage.getItem("job");
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const jobs = useSelector((state) => state.jobApplication);
 
